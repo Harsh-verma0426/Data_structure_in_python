@@ -105,7 +105,7 @@ Copy code
 | `get_size()` | Return the number of nodes |
 | `max()` | Return the maximum value in the list |
 | `min()` | Return the minimum value in the list |
-| `sort(descending=False)` | Sort the list in ascending or descending order |
+| `sort(ascending=True)` | Sort the list in ascending or descending order |
 
 ---
 
