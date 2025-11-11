@@ -1,7 +1,7 @@
-# Data_structure_in_python
+# 🧠 Data Structure in Python
 
 A collection of **core data structures** implemented in **Python**, starting with a custom-built **Linked List**.  
-This repository is designed for learning, practice, and strengthening your foundation in **Data Structures & Algorithms (DSA)**.
+This repository is designed for learning, practicing, and strengthening your foundation in **Data Structures & Algorithms (DSA)**.
 
 ---
 
@@ -14,104 +14,136 @@ Each node contains:
 - **value** → The data it holds  
 - **next** → A pointer to the next node in the list
 
-The `LinkedList` class provides a clean interface for basic operations such as insertion, deletion, traversal, and searching.
+The `LinkedList` class provides a clean interface for basic operations such as insertion, deletion, traversal, sorting, and searching.
 
 ---
 
 ## 🧩 Classes
 
-### 🧱 `Node`
-Represents one node in the linked list.
+### 🧱 Node
+Represents one node in the linked list:
 
-```python
 class Node:
-    def __init__(self, value):
-        self.value = value
-        self.next = None
+def init(self, value):
+self.value = value
+self.next = None
 
-🔗 LinkedList
-Handles all the linked list operations and keeps track of the head, tail, and size.
-
-⚙️ Features
-✅ Append elements to the end
-✅ Prepend elements to the beginning
-✅ Insert at a specific index
-✅ Delete a node by value
-✅ Search for a value in the list
-✅ Display all elements
-✅ Get current size of the list
-
-💻 Example Usage
-python
+yaml
 Copy code
+
+### 🔗 LinkedList
+Handles all linked list operations and keeps track of the **head**, **tail**, and **size**.
+
+---
+
+## ⚙️ Features
+
+- ✅ Append elements to the end  
+- ✅ Prepend elements to the beginning  
+- ✅ Insert at a specific index  
+- ✅ Delete a node by value  
+- ✅ Search for a value in the list  
+- ✅ Display all elements  
+- ✅ Find minimum and maximum values  
+- ✅ Sort list (ascending or descending)  
+- ✅ Get the current size of the list  
+
+---
+
+## 💻 Example Usage
+
 from linked_list import LinkedList
 
-# Create a new LinkedList
+Create a new LinkedList
 ll = LinkedList()
 
-# Add elements
+Add elements
 ll.append(10)
 ll.append(20)
 ll.prepend(5)
 ll.insert(1, 15)
 
-# Display the list
-ll.display()   # Output: [5, 15, 10, 20]
+Display the list
+ll.display() # Output: [5, 15, 10, 20]
 
-# Search for a value
-print(ll.search(10))  # True
+Search for a value
+print(ll.search(10)) # True
 
-# Delete a node
+Delete a node
 ll.delete(15)
-ll.display()   # Output: [5, 10, 20]
+ll.display() # Output: [5, 10, 20]
 
-# Get the size
-print("Size:", ll.get_size())  # 3
-🧮 Methods Summary
-Method	Description
-append(value)	Add a node at the end
-prepend(value)	Add a node at the beginning
-insert(index, value)	Insert a node at a specific index
-delete(value)	Delete the first node matching the value
-search(value)	Check if a value exists
-display()	Print all elements
-get_size()	Return the number of nodes
-```
-🧰 Tech Stack
-Language: Python 3
+Get max and min
+print("Max:", ll.max()) # 20
+print("Min:", ll.min()) # 5
 
-Paradigm: Object-Oriented Programming
+Sort the list
+ll.sort() # Ascending
+ll.display() # [5, 10, 20]
 
-Focus: Data Structures, Algorithm Design
+ll.sort(descending=True) # Descending
+ll.display() # [20, 10, 5]
 
-🚀 Future Additions
+Get the size
+print("Size:", ll.get_size()) # 3
+
+yaml
+Copy code
+
+---
+
+## 🧮 Methods Summary
+
+| Method | Description |
+|--------|--------------|
+| `append(value)` | Add a node at the end |
+| `prepend(value)` | Add a node at the beginning |
+| `insert(index, value)` | Insert a node at a specific index |
+| `delete(value)` | Delete the first node matching the value |
+| `search(value)` | Check if a value exists |
+| `display()` | Print all elements |
+| `get_size()` | Return the number of nodes |
+| `max()` | Return the maximum value in the list |
+| `min()` | Return the minimum value in the list |
+| `sort(descending=False)` | Sort the list in ascending or descending order |
+
+---
+
+## 🧰 Tech Stack
+
+- **Language:** Python 3  
+- **Paradigm:** Object-Oriented Programming  
+- **Focus:** Data Structures, Algorithm Design  
+
+---
+
+## 🚀 Future Additions
+
 This repository will grow to include:
+- Doubly Linked List  
+- Stack (using Linked List & Array)  
+- Queue  
+- Binary Search Tree (BST)  
+- Graphs  
+- Hash Tables  
 
-Doubly Linked List
+---
 
-Stack (using Linked List & Array)
+## 🌟 Contributing
 
-Queue
-
-Binary Search Tree (BST)
-
-Graphs
-
-Hash Tables
-
-
-🌟 Contributing
-Contributions are welcome!
+Contributions are welcome!  
 If you’d like to improve the code or add new data structures, feel free to:
 
-Fork this repository
+1. **Fork** this repository  
+2. **Create** a feature branch  
+3. **Commit** your changes  
+4. **Open** a pull request 🚀  
 
-Create a feature branch
+---
 
-Commit your changes
+## 🏷️ Repository Info
 
-Open a pull request 🚀
-
-🏷️ Repository
-Repository Name: Data_structure_in_python
+**Repository Name:** `data_structure_in_python`  
 📁 A growing collection of core data structures implemented cleanly and from scratch.
+
+---
