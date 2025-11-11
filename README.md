@@ -28,7 +28,7 @@ class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
-````
+
 🔗 LinkedList
 Handles all the linked list operations and keeps track of the head, tail, and size.
 
@@ -76,7 +76,7 @@ delete(value)	Delete the first node matching the value
 search(value)	Check if a value exists
 display()	Print all elements
 get_size()	Return the number of nodes
-
+```
 🧰 Tech Stack
 Language: Python 3
 
