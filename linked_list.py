@@ -101,13 +101,35 @@ class LinkedList:
             swap = False
             current = self.head
 
-            while current.next is not None:
+            while current.next:
                 if (ascending and current.value > current.next.value) or (not ascending and current.value < current.next.value ):
                     current.value, current.next.value = current.next.value, current.value
                     swap = True
                 current = current.next
 
+    def max(self):
+        if self.head is None:
+            return None
 
+        maximum = self.head.value
+        current = self.head
+        while current:
+            if maximum < current.value:
+                maximum = current.value
+            current = current.next
+        return maximum
+        
+    def min(self):
+        if self.head is None:
+            return None
+
+        minimum = self.head.value
+        current = self.head
+        while current:
+            if minimum > current.value:
+                minimum = current.value
+            current = current.next
+        return minimum
         
 
 
