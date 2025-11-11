@@ -1,4 +1,4 @@
-from Data_structure_in_python.node import Node
+from node import Node
 
 class LinkedList:
     def __init__(self,size=0):
@@ -8,7 +8,7 @@ class LinkedList:
 
     def append(self, value):
         new_node = Node(value)
-        if not self.head:
+        if not self.hdescendingead:
             self.head = new_node
             self.tail = new_node
         else:
@@ -76,3 +76,23 @@ class LinkedList:
             elif index == self.size:
                 self.append(value)
                 
+    def reverse(self):
+
+        prev = None
+        current = self.head
+
+        while current:
+            next_node = current.next
+            current.next = prev
+            prev = current
+            current = next_node
+
+        self.tail = self.head
+        self.head = prev 
+
+
+
+
+
+
+
