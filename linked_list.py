@@ -99,13 +99,16 @@ class LinkedList:
         swap = True
         while swap:
             swap = False
-            temp = self.head
+            current = self.head
 
-            while temp.next is not None:
-                if (ascending and temp.value > temp.next.value) or (not ascending and temp.value < temp.next.value ):
-                    temp.value, temp.next.value = temp.next.value, temp.value
+            while current.next is not None:
+                if (ascending and current.value > current.next.value) or (not ascending and current.value < current.next.value ):
+                    current.value, current.next.value = current.next.value, current.value
                     swap = True
-                temp = temp.next
+                current = current.next
+
+
+        
 
 
 
