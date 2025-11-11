@@ -91,7 +91,21 @@ class LinkedList:
         self.head = prev 
 
 
+    def sort(self, ascending=True):
 
+        if self.head is None:
+            return
+
+        swap = True
+        while swap:
+            swap = False
+            temp = self.head
+
+            while temp.next is not None:
+                if (ascending and temp.value > temp.next.value) or (not ascending and temp.value < temp.next.value ):
+                    temp.value, temp.next.value = temp.next.value, temp.value
+                    swap = True
+                temp = temp.next
 
 
 
