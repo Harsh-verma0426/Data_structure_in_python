@@ -28,6 +28,7 @@ class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
+````
 🔗 LinkedList
 Handles all the linked list operations and keeps track of the head, tail, and size.
 
@@ -114,7 +115,3 @@ Open a pull request 🚀
 🏷️ Repository
 Repository Name: Data_structure_in_python
 📁 A growing collection of core data structures implemented cleanly and from scratch.
-
-
-Would you like me to make it **visually enhanced** with collapsible `<details>` sections (for code examples and method lists) and badges like “Made with Python” or “Open Source”?  
-That would make your GitHub repo look next-level professional.
