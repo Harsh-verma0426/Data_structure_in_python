@@ -1,0 +1,40 @@
+from linked_list.linked_list import LinkedList
+from linked_list.doubly_linked_list import DoublyLinkedList
+
+ll = LinkedList()
+ll.append(10)
+ll.prepend(5)
+ll.append(20)
+ll.insert(1,15)
+ll.delete(20)
+print("Singly:", ll)
+print("Max:", ll.max()) 
+print("Min:", ll.min()) 
+ll.reverse()
+print("Reversed:", ll) 
+ll.sort()
+print("Sorted:", ll)
+ll.sort(ascending=False)
+print("Sorted Desc:", ll)
+for i in ll:
+    print(i)
+
+# Doubly Linked List
+dll = DoublyLinkedList()
+dll.append(10)
+dll.append(20)
+dll.prepend(5)
+ll.insert(1,15)
+print("Doubly:", dll)
+print("Max:", ll.max()) 
+print("Min:", ll.min()) 
+dll.delete(10)
+print("After delete:", dll) 
+ll.reverse()
+print("Reversed:", ll) 
+ll.sort()
+print("Sorted:", ll)
+ll.sort(ascending=False)
+print("Sorted Desc:", ll)
+for i in dll:
+    print(i)
