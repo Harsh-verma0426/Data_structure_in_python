@@ -5,184 +5,149 @@ This repository is designed for learning, practicing, and strengthening your fou
 
 ---
 
-## 📂 Projects Included
 
-### 1️⃣ Singly Linked List  
-A basic implementation of a linear linked list where each node contains:
-- **value** → The data it holds  
-- **next** → A pointer to the next node in the list  
+The `linked_list` folder acts as a **package**, allowing clean imports like:
+```python
+from linked_list.linked_list import LinkedList
+from linked_list.doubly_linked_list import DoublyLinkedList
+📋 Overview
+This repository demonstrates how both singly and doubly linked lists work —
+two fundamental linear data structures that store data in connected nodes.
 
-### 2️⃣ Doubly Linked List  
-An enhanced version where each node has two pointers:
-- **value** → The data it holds  
-- **next** → A pointer to the next node  
-- **prev** → A pointer to the previous node  
+🧩 Classes
+🧱 Node
+Represents one node in a linked list.
 
-This makes **bidirectional traversal** and certain operations (like deletion) much easier and more efficient.
-
----
-
-## 🧩 Classes
-
-### 🧱 Node (for both lists)
 
 class Node:
-def init(self, value):
-self.value = value
-self.next = None
-# for doubly linked list
-self.prev = None
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+        self.prev = None  # only used in Doubly Linked List
+🔗 Singly Linked List
+⚙️ Features
+✅ Append elements to the end
 
-yaml
-Copy code
+✅ Prepend elements to the beginning
 
----
+✅ Insert at a specific index
 
-## ⚙️ Singly Linked List — Features
+✅ Delete a node by value
 
-- ✅ Append elements to the end  
-- ✅ Prepend elements to the beginning  
-- ✅ Insert at a specific index  
-- ✅ Delete a node by value  
-- ✅ Search for a value  
-- ✅ Display all elements  
-- ✅ Get list size  
-- ✅ Find max and min values  
-- ✅ Sort the list (ascending or descending)
+✅ Search for a value
 
----
+✅ Reverse the list
 
-### 💻 Example Usage (Singly Linked List)
+✅ Sort (ascending or descending)
 
-from linked_list import LinkedList
+✅ Find maximum and minimum values
+
+✅ Iterable and printable using Python magic methods (__iter__, __str__)
+
+💻 Example Usage
+
+from linked_list.linked_list import LinkedList
 
 ll = LinkedList()
-
 ll.append(10)
-ll.append(20)
 ll.prepend(5)
-ll.insert(1, 15)
+ll.append(20)
 
-ll.display() # [5, 15, 10, 20]
-print(ll.search(10)) # True
+print("Singly:", ll)         # [5, 10, 20]
+print("Max:", ll.max())      # 20
 
-ll.delete(15)
-ll.display() # [5, 10, 20]
+ll.reverse()
+print("Reversed:", ll)       # [20, 10, 5]
+🧮 Methods Summary
+Method	Description
+append(value)	Add a node at the end
+prepend(value)	Add a node at the beginning
+insert(index, value)	Insert at a specific index
+delete(value)	Delete a node by value
+reverse()	Reverse the list
+sort(descending=False)	Sort the list
+max() / min()	Find largest/smallest value
+search(value)	Check if a value exists
+__iter__()	Make the list iterable
+__str__()	Print as [1, 2, 3]
 
-print("Max:", ll.max()) # 20
-print("Min:", ll.min()) # 5
+🔁 Doubly Linked List
+⚙️ Features
+✅ Append elements (updates both directions)
 
-ll.sort() # Ascending
-ll.display() # [5, 10, 20]
+✅ Prepend elements
 
-ll.sort(descending=True) # Descending
-ll.display() # [20, 10, 5]
+✅ Insert at a specific index
 
-yaml
-Copy code
+✅ Delete nodes by value
 
----
+✅ Search for elements
 
-## 🧮 Singly Linked List — Methods Summary
+✅ Forward & backward traversal
 
-| Method | Description |
-|--------|--------------|
-| `append(value)` | Add a node at the end |
-| `prepend(value)` | Add a node at the beginning |
-| `insert(index, value)` | Insert at a specific position |
-| `delete(value)` | Delete a node with given value |
-| `search(value)` | Check if a value exists |
-| `display()` | Print all elements |
-| `get_size()` | Return list size |
-| `max()` | Return the maximum value |
-| `min()` | Return the minimum value |
-| `sort(descending=False)` | Sort the list |
+✅ Sort, Max, Min
 
----
+✅ Fully iterable and printable like a Python list
 
-## 🔗 Doubly Linked List — Features
+💻 Example Usage
 
-- ✅ Append elements (updates both next and prev links)  
-- ✅ Prepend elements (adds node at the beginning)  
-- ✅ Delete node by value (handles both directions)  
-- ✅ Search for a value  
-- ✅ Forward traversal (`display()`)  
-- ✅ Backward traversal (`display_reverse()`)  
-- ✅ Maintain size dynamically  
+from linked_list.doubly_linked_list import DoublyLinkedList
 
----
-
-### 💻 Example Usage (Doubly Linked List)
-
-from doubly_linked_list import Doubly_linkedList
-
-dll = Doubly_linkedList()
-
+dll = DoublyLinkedList()
 dll.append(10)
 dll.append(20)
 dll.prepend(5)
 
-dll.display() # [5, 10, 20]
-dll.display_reverse() # [20, 10, 5]
-
+print("Doubly:", dll)       # [5, 10, 20]
 dll.delete(10)
-dll.display() # [5, 20]
+print("After delete:", dll) # [5, 20]
 
-print("Size:", dll.get_size()) # 2
-print(dll.search(20)) # True
+for value in dll:
+    print(value)
+🧮 Methods Summary
+Method	Description
+append(value)	Add node to the end
+prepend(value)	Add node to the start
+insert(index, value)	Insert at specific index
+delete(value)	Delete a node by value
+search(value)	Check if a value exists
+sort(descending=False)	Sort the list
+max() / min()	Find largest/smallest value
+__iter__()	Iterate through list
+__str__()	Print as [5, 10, 20]
 
-yaml
-Copy code
+🧰 Tech Stack
+Language: Python 3
 
----
+Paradigm: Object-Oriented Programming
 
-## 🧮 Doubly Linked List — Methods Summary
+Focus: Data Structures, Algorithm Design
 
-| Method | Description |
-|--------|--------------|
-| `append(value)` | Add a node at the end |
-| `prepend(value)` | Add a node at the beginning |
-| `delete(value)` | Delete node (updates both directions) |
-| `search(value)` | Search by value |
-| `display()` | Display list forward |
-| `display_reverse()` | Display list backward |
-| `get_size()` | Return total number of nodes |
+🚀 Future Additions
+This repository will grow to include:
 
----
+Stack (Linked List & Array based)
 
-## 🧰 Tech Stack
+Queue
 
-- **Language:** Python 3  
-- **Paradigm:** Object-Oriented Programming  
-- **Focus:** Data Structures, Algorithm Design  
+Binary Search Tree (BST)
 
----
+Graphs
 
-## 🚀 Future Additions
+Hash Tables
 
-This repository will soon include:
-- Doubly Linked List (completed ✅)  
-- Stack (using Linked List)  
-- Queue  
-- Binary Search Tree (BST)  
-- Graphs  
-- Hash Tables  
+🌟 Contributing
+Contributions are welcome!
+If you’d like to improve the code or add new data structures:
 
----
+Fork this repository
 
-## 🌟 Contributing
+Create a feature branch
 
-Contributions are welcome!  
-If you’d like to improve the code or add new data structures, feel free to:
+Commit your changes
 
-1. **Fork** this repository  
-2. **Create** a feature branch  
-3. **Commit** your changes  
-4. **Open** a pull request 🚀  
+Open a pull request 🚀
 
----
-
-## 🏷️ Repository Info
-
-**Repository Name:** `data_structure_in_python`  
+🏷️ Repository Info
+Repository Name: data_structure_in_python
 📁 A growing collection of clean, from-scratch implementations of core data structures.
