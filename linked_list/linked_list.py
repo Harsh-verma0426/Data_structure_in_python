@@ -34,7 +34,7 @@ class LinkedList:
             current = current.next
         print(elements)
 
-    def get_size(self):
+    def __len__(self):
         return self.size
     
     def search(self, value):
@@ -69,12 +69,23 @@ class LinkedList:
         return False
 
     def insert(self, index, value):
+        if index < 0 or index > self.size:
+            raise IndexError("Index out of range")
 
-            if index == 0:
-                self.prepend(value)
-            
-            elif index == self.size:
-                self.append(value)
+        if index == 0:
+            self.prepend(value)
+            return
+        elif index == self.size:
+            self.append(value)
+            return
+
+        new_node = Node(value)
+        current = self.head
+        for _ in range(index - 1):
+            current = current.next  
+        new_node.next = current.next
+        current.next = new_node
+        self.size += 1
                 
     def reverse(self):
 
@@ -131,7 +142,17 @@ class LinkedList:
             current = current.next
         return minimum
         
-
-
-
+    def __str__(self):
+        elements = []
+        current = self.head
+        while current:
+            elements.append(current.value)
+            current = current.next
+        return str(elements)
+    
+    def __iter__(self):
+        current = self.head
+        while current:
+            yield current.value
+            current = current.next
 

@@ -1,6 +1,6 @@
 from nodes.doubly_node import Node
 
-class Doubly_linkedList:
+class DoublyLinkedList:
     def __init__(self,size=0):
         self.head = None
         self.tail = None
@@ -28,17 +28,37 @@ class Doubly_linkedList:
             self.head = new_node
         self.size += 1
 
-    def display(self):
-        current = self.head
-        elements = []
-        while current:
-            elements.append(current.value)
-            current = current.next
-        print(elements)
+    def insert(self, index, value):
+        if index < 0 or index > self.size:
+            raise IndexError("Index out of range")
 
-    def get_size(self):
-        return self.size
-    
+        if index == 0:
+            self.prepend(value)
+            return
+        elif index == self.size:
+            self.append(value)
+            return
+
+        new_node = Node(value)
+        current = self.head
+        for _ in range(index - 1):
+            current = current.next
+        new_node.next = current.next
+        current.next = new_node
+        self.size += 1
+
+    def display(self,reverse=False):
+        if not reverse:
+            current = self.head
+            elements = []
+            while current:
+                elements.append(current.value)
+                current = current.next
+            print(elements)
+
+        else:
+            self.display_reverse()
+
     def display_reverse(self):
         current = self.tail
         elements = []
@@ -46,6 +66,9 @@ class Doubly_linkedList:
             elements.append(current.value)
             current = current.prev
         print(elements)
+    
+    def __len__(self):
+        return self.size
     
     def search(self, value):
         current = self.head
@@ -117,3 +140,17 @@ class Doubly_linkedList:
                 minimum = current.value
             current = current.next
         return minimum
+    
+    def __str__(self):
+        elements = []
+        current = self.head
+        while current:
+            elements.append(current.value)
+            current = current.next
+        return str(elements)
+    
+    def __iter__(self):
+        current = self.head
+        while current:
+            yield current.value
+            current = current.next
