@@ -1,4 +1,4 @@
-from node import Node
+from nodes.node import Node
 
 class LinkedList:
     def __init__(self,size=0):
@@ -8,7 +8,7 @@ class LinkedList:
 
     def append(self, value):
         new_node = Node(value)
-        if not self.hdescendingead:
+        if not self.head:
             self.head = new_node
             self.tail = new_node
         else:
