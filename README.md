@@ -10,6 +10,7 @@ The `linked_list` folder acts as a **package**, allowing clean imports like:
 ```python
 from linked_list.linked_list import LinkedList
 from linked_list.doubly_linked_list import DoublyLinkedList
+```
 📋 Overview
 This repository demonstrates how both singly and doubly linked lists work —
 two fundamental linear data structures that store data in connected nodes.
@@ -17,13 +18,14 @@ two fundamental linear data structures that store data in connected nodes.
 🧩 Classes
 🧱 Node
 Represents one node in a linked list.
-
+```
 
 class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
         self.prev = None  # only used in Doubly Linked List
+```
 🔗 Singly Linked List
 ⚙️ Features
 ✅ Append elements to the end
@@ -45,7 +47,7 @@ class Node:
 ✅ Iterable and printable using Python magic methods (__iter__, __str__)
 
 💻 Example Usage
-
+```
 from linked_list.linked_list import LinkedList
 
 ll = LinkedList()
@@ -70,6 +72,7 @@ max() / min()	Find largest/smallest value
 search(value)	Check if a value exists
 __iter__()	Make the list iterable
 __str__()	Print as [1, 2, 3]
+```
 
 🔁 Doubly Linked List
 ⚙️ Features
@@ -90,7 +93,7 @@ __str__()	Print as [1, 2, 3]
 ✅ Fully iterable and printable like a Python list
 
 💻 Example Usage
-
+```
 from linked_list.doubly_linked_list import DoublyLinkedList
 
 dll = DoublyLinkedList()
@@ -115,7 +118,7 @@ sort(descending=False)	Sort the list
 max() / min()	Find largest/smallest value
 __iter__()	Iterate through list
 __str__()	Print as [5, 10, 20]
-
+```
 🧰 Tech Stack
 Language: Python 3
 
