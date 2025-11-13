@@ -1,50 +1,51 @@
 # 🧠 Data Structure in Python
 
-A collection of **core data structures** implemented in **Python**, starting with custom-built **Linked Lists** — both **Singly** and **Doubly** linked lists.  
+A collection of **core data structures** implemented in **Python**, including **Singly**, **Doubly**, and now **Circular** Linked Lists.  
 This repository is designed for learning, practicing, and strengthening your foundation in **Data Structures & Algorithms (DSA)**.
 
 ---
 
+## 📂 Package Structure
 
-The `linked_list` folder acts as a **package**, allowing clean imports like:
+The `linked_list` folder acts as a package, allowing clean imports like:
+
 ```python
 from linked_list.linked_list import LinkedList
 from linked_list.doubly_linked_list import DoublyLinkedList
+from linked_list.circular_linked_list import CircularLinkedList
 ```
-📋 Overview
-This repository demonstrates how both singly and doubly linked lists work —
-two fundamental linear data structures that store data in connected nodes.
-
 🧩 Classes
 🧱 Node
 Represents one node in a linked list.
 ```
-
 class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
-        self.prev = None  # only used in Doubly Linked List
+        self.prev = None   # used only in Doubly Linked List
 ```
 🔗 Singly Linked List
 ⚙️ Features
-✅ Append elements to the end
 
-✅ Prepend elements to the beginning
+✅ Append elements
 
-✅ Insert at a specific index
+✅ Prepend elements
 
-✅ Delete a node by value
+✅ Insert at specific index
 
-✅ Search for a value
+✅ Delete by value
 
-✅ Reverse the list
+✅ Search
 
-✅ Sort (ascending or descending)
+✅ Reverse
 
-✅ Find maximum and minimum values
+✅ Sort (ascending/descending)
 
-✅ Iterable and printable using Python magic methods (__iter__, __str__)
+✅ max() / min()
+
+✅ Iterable (__iter__)
+
+✅ Printable (__str__)
 
 💻 Example Usage
 ```
@@ -60,37 +61,40 @@ print("Max:", ll.max())      # 20
 
 ll.reverse()
 print("Reversed:", ll)       # [20, 10, 5]
+```
 🧮 Methods Summary
 Method	Description
+```
 append(value)	Add a node at the end
-prepend(value)	Add a node at the beginning
-insert(index, value)	Insert at a specific index
-delete(value)	Delete a node by value
+prepend(value)	Add at the beginning
+insert(index, value)	Insert at specific position
+delete(value)	Delete by value
 reverse()	Reverse the list
 sort(descending=False)	Sort the list
-max() / min()	Find largest/smallest value
-search(value)	Check if a value exists
-__iter__()	Make the list iterable
-__str__()	Print as [1, 2, 3]
+max() / min()	Largest / smallest value
+search(value)	Check if value exists
+__iter__()	Make iterable
+__str__()	Display as [1, 2, 3]
 ```
-
 🔁 Doubly Linked List
 ⚙️ Features
-✅ Append elements (updates both directions)
+✅ Append (bidirectional update)
 
-✅ Prepend elements
+✅ Prepend
 
-✅ Insert at a specific index
+✅ Insert at index
 
-✅ Delete nodes by value
+✅ Delete by value
 
-✅ Search for elements
+✅ Search
 
-✅ Forward & backward traversal
+✅ Forward traversal
+
+✅ Backward traversal
 
 ✅ Sort, Max, Min
 
-✅ Fully iterable and printable like a Python list
+✅ Iterable + Printable
 
 💻 Example Usage
 ```
@@ -107,29 +111,71 @@ print("After delete:", dll) # [5, 20]
 
 for value in dll:
     print(value)
+```
 🧮 Methods Summary
 Method	Description
-append(value)	Add node to the end
-prepend(value)	Add node to the start
-insert(index, value)	Insert at specific index
-delete(value)	Delete a node by value
-search(value)	Check if a value exists
-sort(descending=False)	Sort the list
-max() / min()	Find largest/smallest value
-__iter__()	Iterate through list
+```
+append(value)	Add at end
+prepend(value)	Add at beginning
+insert(index, value)	Insert at index
+delete(value)	Delete by value
+search(value)	Contains value?
+sort(descending=False)	Sort list
+max() / min()	Largest / smallest
+__iter__()	Iterate
 __str__()	Print as [5, 10, 20]
+```
+
+🔄 Circular Linked List
+⚙️ Features
+✅ Append (maintains circular structure)
+
+✅ Prepend
+
+✅ Delete by value (including head & tail handling)
+
+✅ Search
+
+✅ Fully circular iteration
+
+✅ Printable using __str__()
+
+✅ Zero edge-case bugs (head, tail, 1-node list)
+
+💻 Example Usage
+```
+from linked_list.circular_linked_list import CircularLinkedList
+
+cll = CircularLinkedList()
+cll.append(10)
+cll.append(20)
+cll.prepend(5)
+
+print("Circular:", cll)      # [5, 10, 20]
+
+cll.delete(10)
+print("After delete:", cll)  # [5, 20]
+
+for val in cll:
+    print(val)
+🧮 Methods Summary
+Method	Description
+append(value)	Add to the end (circular)
+prepend(value)	Add to the start
+delete(value)	Delete by value
+search(value)	Search entire circular loop
+__iter__()	Iterate full circle safely
+__str__()	Print as [a, b, c]
 ```
 🧰 Tech Stack
 Language: Python 3
 
 Paradigm: Object-Oriented Programming
 
-Focus: Data Structures, Algorithm Design
+Focus: Data Structures & Algorithms
 
 🚀 Future Additions
-This repository will grow to include:
-
-Stack (Linked List & Array based)
+Stack (LL + Array version)
 
 Queue
 
@@ -141,9 +187,9 @@ Hash Tables
 
 🌟 Contributing
 Contributions are welcome!
-If you’d like to improve the code or add new data structures:
+Steps to contribute:
 
-Fork this repository
+Fork the repo
 
 Create a feature branch
 
@@ -152,5 +198,5 @@ Commit your changes
 Open a pull request 🚀
 
 🏷️ Repository Info
-Repository Name: data_structure_in_python
-📁 A growing collection of clean, from-scratch implementations of core data structures.
+Repository: data_structure_in_python
+📁 A growing collection of clean, from-scratch implementations of fundamental data structures.
