@@ -12,7 +12,7 @@ This project is designed for learning, practicing, and strengthening your founda
 ---
 
 ## 📂 Package Structure
-
+```
 data_structure_in_python/
 │
 ├── linked_list/
@@ -22,9 +22,7 @@ data_structure_in_python/
 │
 └── stack/
 └── stack.py
-
-python
-Copy code
+```
 
 Import examples:
 
