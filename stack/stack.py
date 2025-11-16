@@ -17,8 +17,10 @@ class Stack:
     def pop(self):
         if self.is_empty():
             raise IndexError("pop from empty stack")
+        popped_value = self.top.value
         self.top = self.top.next
         self.size -= 1
+        return popped_value
 
     def peek(self):
         if self.is_empty():
@@ -34,4 +36,7 @@ class Stack:
         while current:
             values.append(str(current.value))
             current = current.next
-        return str(values)
+        return str(values)  
+    
+    def __bool__(self):
+        return not self.is_empty()
