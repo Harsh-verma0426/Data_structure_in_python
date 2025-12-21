@@ -1,4 +1,4 @@
-from nodes.doubly_node import Node
+from nodes.doubly_list_node import Node
 
 class DoublyLinkedList:
     def __init__(self,size=0):
