@@ -16,7 +16,7 @@ class BinarySearchTree:
         
         return self.root
 
-    def find_min(self.):
+    def find_min(self):
         current = self.root
         while current and current.left is not None:
             current = current.left
